@@ -1,7 +1,7 @@
 <html> 
 <head> 
 <title> TRIANGLE </title> 
-<script type="text/javascript" src="R.js"> </script> 
+<script type="text/javascript" src="MM.js"> </script> 
 
 <script type="x-shader/x-vertex" id="vs">
   attribute vec4 vPosition; 
@@ -21,7 +21,7 @@
   window.onload = main; 
   
   function main() {
-    var gl = R.getGlContext("gl"),
+    var gl = MM.getGlContext("gl"),
         glUtil = null, 
         userData = {};
 
@@ -39,7 +39,7 @@
     if(!gl)
       alert("WebGL not Supported :("); 
 
-    glUtil = new R.GlUtil(gl); 
+    glUtil = new MM.GlUtil(gl); 
 
     init(gl, glUtil, userData);
 

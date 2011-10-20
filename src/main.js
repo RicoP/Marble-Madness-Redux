@@ -15,9 +15,10 @@ http.createServer(function(req, res) {
   }
 
   handler(req, res); 
-}).listen( 8002, "127.0.0.1" );
+}).listen( 8004, "127.0.0.1" );
  
-process.title = "node blog"; 
+process.title = "node MMR"; 
+console.log("MMR gestarted."); 
 
 function redirect404(req, res) {
   res.writeHead(404, {}); 
