@@ -1,4 +1,4 @@
-var R = R || (function() {
+var MM = MM || (function() {
   var doc = document; 
 
   return {
