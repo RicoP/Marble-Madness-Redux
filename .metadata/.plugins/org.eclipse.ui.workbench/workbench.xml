@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="22" version="2.0">
+<workbench progressCount="37" version="2.0">
 <workbenchAdvisor/>
 <window height="878" width="1200" x="0" y="22">
 <fastViewData fastViewLocation="1024"/>
@@ -35,15 +35,10 @@
 <part id="3"/>
 <part id="4"/>
 <part id="5"/>
-<part id="6"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor id="com.aptana.editor.js" name="main.js" partName="main.js" path="/Users/ricopossienka/local/Marble-Madness-Redux/MMR/main.js" title="main.js" tooltip="MMR/main.js" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MMR/main.js"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="442" selectionTopPixel="0"/>
-</editor>
 <editor id="com.aptana.editor.js" name="MM.js" partName="MM.js" path="/Users/ricopossienka/local/Marble-Madness-Redux/MMR/http/MM.js" title="MM.js" tooltip="MMR/http/MM.js" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MMR/http/MM.js"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="421" selectionTopPixel="0"/>
@@ -56,13 +51,17 @@
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MMR/http/triangle.html"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="445" selectionTopPixel="0"/>
 </editor>
-<editor activePart="true" focus="true" id="com.aptana.editor.text" name="log.txt" partName="log.txt" path="/Users/ricopossienka/local/Marble-Madness-Redux/MMR/log.txt" title="log.txt" tooltip="MMR/log.txt" workbook="DefaultEditorWorkbook">
+<editor id="com.aptana.editor.text" name="log.txt" partName="log.txt" path="/Users/ricopossienka/local/Marble-Madness-Redux/MMR/log.txt" title="log.txt" tooltip="MMR/log.txt" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MMR/log.txt"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="56" selectionTopPixel="0"/>
 </editor>
 <editor id="com.aptana.editor.text" name="loop.sh" partName="loop.sh" path="/Users/ricopossienka/local/Marble-Madness-Redux/MMR/loop.sh" title="loop.sh" tooltip="MMR/loop.sh" workbook="DefaultEditorWorkbook">
 <input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MMR/loop.sh"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="55" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="com.aptana.editor.js" name="server.js" partName="server.js" path="/Users/ricopossienka/local/Marble-Madness-Redux/MMR/server.js" title="server.js" tooltip="MMR/server.js" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/MMR/server.js"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="744" selectionTopPixel="349"/>
 </editor>
 </editors>
 <views>
@@ -80,7 +79,7 @@
 <element path="/MMR/http"/>
 </expanded>
 <selection>
-<element path="/MMR/log.txt"/>
+<element path="/MMR/server.js"/>
 </selection>
 </project>
 </viewState>
@@ -89,7 +88,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="com.aptana.editor.text" activePerspective="com.aptana.ui.WebPerspective">
+<perspectives activePart="com.aptana.editor.js" activePerspective="com.aptana.ui.WebPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.aptana.ui.internal.WebPerspectiveFactory" id="com.aptana.ui.WebPerspective" label="Web"/>
 <alwaysOnActionSet id="com.aptana.browser.actionSet"/>
@@ -193,6 +192,10 @@
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.html" path="/MMR/http/triangle.html"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.text" path="/MMR/log.txt"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.text" path="/MMR/loop.sh"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.js" path="/MMR/main.js"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.text" path="/MMR/loop.sh"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.js" path="/MMR/http/MM.js"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.js" path="/MMR/server.js"/>
 </editors>
 <item historyLabel="index.html" index="0">
 <position info="not_deleted" x="358" y="0"/>
@@ -257,8 +260,29 @@
 <item historyLabel="loop.sh" index="6">
 <position info="not_deleted" x="60" y="0"/>
 </item>
-<item active="true" historyLabel="log.txt" index="5">
+<item historyLabel="log.txt" index="5">
 <position info="not_deleted" x="41" y="0"/>
+</item>
+<item historyLabel="main.js" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="loop.sh" index="8">
+<position info="not_deleted" x="55" y="0"/>
+</item>
+<item historyLabel="main.js" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="loop.sh" index="8">
+<position info="not_deleted" x="55" y="0"/>
+</item>
+<item historyLabel="main.js" index="7">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="MM.js" index="9">
+<position info="not_deleted" x="421" y="0"/>
+</item>
+<item active="true" historyLabel="server.js" index="10">
+<position info="not_deleted" x="0" y="1365"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -277,6 +301,12 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.js" name="server.js" tooltip="MMR/server.js">
+<persistable path="/MMR/server.js"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.js" name="main.js" tooltip="MMR/main.js">
+<persistable path="/MMR/main.js"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.text" name="loop.sh" tooltip="MMR/loop.sh">
 <persistable path="/MMR/loop.sh"/>
 </file>
@@ -291,9 +321,6 @@
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.js" name="MM.js" tooltip="MMR/http/MM.js">
 <persistable path="/MMR/http/MM.js"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.js" name="main.js" tooltip="MMR/main.js">
-<persistable path="/MMR/main.js"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="com.aptana.editor.html" name="index.html" tooltip="MMR/index.html">
 <persistable path="/MMR/index.html"/>

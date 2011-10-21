@@ -1,4 +1,8 @@
-var http = require('http'), fs = require("fs"), path = require("path"), urlParser = require("url").parse, handlerList = syncDir("http");
+var http = require('http'), 
+fs = require("fs"), 
+path = require("path"), 
+urlParser = require("url").parse, 
+handlerList = syncDir("http");
 
 http.createServer(function(req, res) {
 	var parsedUrl = urlParser(req.url, true);
@@ -8,7 +12,7 @@ http.createServer(function(req, res) {
 		redirect404(req, res);
 		return;
 	}
-
+	
 	handler(req, res);
 }).listen(8004, "127.0.0.1");
 
@@ -20,7 +24,7 @@ function redirect404(req, res) {
 	res.end("404: " + req.url + " Not found. " + new Date());
 }
 
-function syncDir(dir) {
+function syncDir(dir) { 
 	var handler = {}, file = null, i = 0, files = fs.readdirSync(dir);
 
 	for(var i = 0; i != files.length; i++) {
