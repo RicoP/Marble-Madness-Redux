@@ -12,4 +12,11 @@
 		<item value="org.python.pydev.feature:2.2.2.2011100512"/>
 		<item value="org.radrails.rails:3.0.3.201110061646-7e-7Q7f4bFKbTpRP"/>
 	</list>
+	<section name="CleanDialogSettings">
+		<item value="484" key="DIALOG_WIDTH"/>
+		<item value="224" key="DIALOG_Y_ORIGIN"/>
+		<item value="356" key="DIALOG_HEIGHT"/>
+		<item value="436" key="DIALOG_X_ORIGIN"/>
+		<item value="false" key="TOGGLE_SELECTED"/>
+	</section>
 </section>
