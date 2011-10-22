@@ -14,12 +14,10 @@ if(!MM) {
 			try {
 				try {
 					gl = canvas.getContext("experimental-webgl", attributes);
-				}
-				catch(e) {
+				} catch(e) {
 				}
 				gl = gl || canvas.getContext("webgl", attributes);
-			}
-			catch(e) {
+			} catch(e) {
 			}
 
 			return gl;
