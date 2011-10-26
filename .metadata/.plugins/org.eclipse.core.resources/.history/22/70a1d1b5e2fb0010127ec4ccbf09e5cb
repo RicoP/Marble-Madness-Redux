@@ -19,7 +19,11 @@ http.createServer(function(req, res) {
 
   handler(req, res); 
 }).listen( 8004, "127.0.0.1" );
+<<<<<<< HEAD:src/main.js
 
+=======
+ 
+>>>>>>> 9a3aed127a671ecc18e75e8a49c7f0f9eee90643:.metadata/.plugins/org.eclipse.core.resources/.history/22/70a1d1b5e2fb0010127ec4ccbf09e5cb
 process.title = "node MMR"; 
 console.log("MMR gestarted."); 
 
