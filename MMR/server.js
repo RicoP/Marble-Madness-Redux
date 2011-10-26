@@ -34,7 +34,7 @@ function syncDir(dir) {
 			})(dir + "/" + file);
 	}
 
-	handler["/"] = createIndexHandler(files); 
+	handler["/"] = createIndexHandler(files);
 
 	return handler;
 }
@@ -45,30 +45,47 @@ function createFileHandler(file) {
 	};
 }
 
+/**
+ *
+ * Erzeugt den Filehandler für den Index
+ *
+ * @param files {array} die Dateien im Ordnerbaum
+ *
+ * */
 function createIndexHandler(files) {
+	var orderedFiles = files.slice(0), //copy files
+	s = "";
+	orderedFiles.sort();
+	s += ("<html><head><title>Possienka.de</title></head><body>");
+	s += ("<ul>");
+
+	for(var i = 0; i != files.length; i++) {
+		s += ("<li><a href='LINK'>LINK</a></li>".replace(/LINK/g, files[i]));
+	}
+	s += ("</ul>");
+	s += ("</body></html>");
+
 	return function(req, res) {
 		res.writeHead(200, {
 			'Content-Type' : 'text/html'
 		});
-		
-		res.write("<html><head><title>Possienka.de</title></head><body>"); 
-		res.write("<ul>"); 
-		
-		for(var i = 0; i != files.length; i++) {
-			res.write("<li><a href='LINK'>LINK</a></li>\n".replace(/LINK/g, files[i])); 
-		}
-		
-		res.write("</ul>");
-		res.write("</body></html>"); 
-		res.end(); 
-	}; 
-} 
 
+		res.end(s);
+	};
+}
+
+/**
+ * Liest eine Datei, relativ zum Pfad und schreibt den Inhalt in die Response.
+ *
+ * @param req {ServerRequest} der Request
+ * @param res {ServerResponse} die Response
+ * @param file {String} der Pfad zu einer Datei
+ */
 function readLocalFile(req, res, file) {
 	console.log(req.url + "-->" + file);
 	fs.readFile(file, function(err, data) {
 		res.writeHead(200, {
-			'Content-Type' : 'text/html'
+			'Content-Type' : getMimeType(file)
 		});
 		if(err) {
 			res.write(JSON.stringify(err));
@@ -77,4 +94,36 @@ function readLocalFile(req, res, file) {
 		}
 		res.end("");
 	});
+}
+
+/**
+ * Gibt den Mime-Type zur entsprechenden Dateiendung zurück
+ *
+ * @param {String} der Dateiname
+ */
+function getMimeType(file) {
+	var split, suffix, list, mime;
+	split = file.split(/\./g);
+	suffix = split.pop();
+	list = {
+		"txt" : "text.plain",
+		"html" : "text/html",
+		"htm" : "text/html",
+		"json" : "application/json",
+		"js" : "application/javascript",
+		"ico" : "image/x-icon",
+		"png" : "image/png",
+		"jpg" : "image/jpeg"
+	};
+
+	if(split.length !== 0 && suffix !== "") {
+		mime = list[suffix]
+		if(mime) {
+			console.log("Mimetype für " + file + " = " + mime);
+			return mime;
+		}
+	}
+
+	console.log("Can't find a MIME type for file " + file + ".");
+	return "text/plain";
 }
