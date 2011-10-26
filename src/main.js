@@ -2,21 +2,24 @@ var http = require('http'),
     fs = require("fs"), 
     path = require("path"), 
     urlParser = require("url").parse, 
-    handlerList = syncDir("http");   
+    handlerList = syncDir("http"), 
+    foo = require("bar"); 
+
 
 http.createServer(function(req, res) {
-  var parsedUrl = urlParser(req.url, true);  
+  var parsedUrl = urlParser(req.url, true);    
 
   handler = handlerList[parsedUrl.pathname]; 
 
   if(!handler) {
+    
     redirect404(req, res); 
     return; 
   }
 
   handler(req, res); 
 }).listen( 8004, "127.0.0.1" );
- 
+
 process.title = "node MMR"; 
 console.log("MMR gestarted."); 
 

@@ -47,9 +47,6 @@
       draw(gl, glUtil, userData);
       requestAnimFrame(animloop);
     })();
-
-    //DEBUG 
-    window.gl = gl; 
   }
 
   function draw(gl, glUtil, userData) {
@@ -110,14 +107,15 @@
     gl.clearColor(0.0, 0.0, 0.0, 1.0); 
 
     //DEBUG 
-    window.program = program; 
+    window.userData = userData; 
+    window.gl = gl; 
 
     return true; 
   }
 </script>
 </head> 
 <body> 
-<canvas id="gl" width="640" height="480"> </canvas> 
+   <canvas id="gl" width="640" height="480"> </canvas> 
 </body> 
 
 </html> 
