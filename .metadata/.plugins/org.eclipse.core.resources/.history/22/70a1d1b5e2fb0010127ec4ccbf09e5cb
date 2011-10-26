@@ -2,21 +2,28 @@ var http = require('http'),
     fs = require("fs"), 
     path = require("path"), 
     urlParser = require("url").parse, 
-    handlerList = syncDir("http");   
+    handlerList = syncDir("http"), 
+    foo = require("bar"); 
+
 
 http.createServer(function(req, res) {
-  var parsedUrl = urlParser(req.url, true);  
+  var parsedUrl = urlParser(req.url, true);    
 
   handler = handlerList[parsedUrl.pathname]; 
 
   if(!handler) {
+    
     redirect404(req, res); 
     return; 
   }
 
   handler(req, res); 
 }).listen( 8004, "127.0.0.1" );
+<<<<<<< HEAD:src/main.js
+
+=======
  
+>>>>>>> 9a3aed127a671ecc18e75e8a49c7f0f9eee90643:.metadata/.plugins/org.eclipse.core.resources/.history/22/70a1d1b5e2fb0010127ec4ccbf09e5cb
 process.title = "node MMR"; 
 console.log("MMR gestarted."); 
 
