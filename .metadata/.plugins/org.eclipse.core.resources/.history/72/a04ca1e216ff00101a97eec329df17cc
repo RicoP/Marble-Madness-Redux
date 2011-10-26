@@ -1,19 +1,19 @@
 <html>
 	<head>
-		<title> SQUARE </title>
-		<script type="text/javascript" src="MM.js"></script>
+		<title> TRIANGLE </title>
 		<script type="x-shader/x-vertex" id="vs">
 			attribute vec4 vPosition;
 			void main() {
-				gl_Position = vPosition;
+			gl_Position = vPosition;
 			}
 		</script>
 		<script type="x-shader/x-fragment" id="fs">
 			precision mediump float;
 			void main() {
-				gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+			gl_FragColor = vec4(1.0, 1.0, 0.0, 1.0);
 			}
 		</script>
+		<script type="text/javascript" src="MM.js"> </script>
 		<script type="text/javascript" src="square.main.js"> </script>
 	</head>
 	<body>

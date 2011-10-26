@@ -13,9 +13,12 @@ function main() {
 
 	if(!gl)
 		alert("WebGL not Supported :(");
+		
 	glUtil = new MM.GlUtil(gl);
 
-	init(gl, glUtil, userData); (function animloop() {
+	init(gl, glUtil, userData);
+	
+	(function animloop() {
 		draw(gl, glUtil, userData);
 		requestAnimFrame(animloop);
 	})();
@@ -79,26 +82,4 @@ function init(gl, glUtil, userData) {
 	window.gl = gl;
 
 	return true;
-}
-
-//////////
-
-function drawBox(size) {
-	vr s = size / 2;
-	var vertices = [
-	[-s,-s, s], 
-	[s,s,s], 
-	[-s,s,s], 
-	[s,-s,s],
-	[-s,-s,-s], 
-	[s,s,-s], 
-	[-s,s,-s], 
-	[s,-s,-s] 
-	]; 
-	
-	var faces = [
-		[0,1,2],
-		[0,3,1],
-		[]
-	]; 
 }

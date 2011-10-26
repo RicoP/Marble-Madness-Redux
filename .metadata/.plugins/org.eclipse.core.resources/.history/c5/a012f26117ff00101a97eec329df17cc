@@ -1,6 +1,6 @@
 <html>
 	<head>
-		<title> SQUARE </title>
+		<title> TRIANGLE </title>
 		<script type="text/javascript" src="MM.js"></script>
 		<script type="x-shader/x-vertex" id="vs">
 			attribute vec4 vPosition;

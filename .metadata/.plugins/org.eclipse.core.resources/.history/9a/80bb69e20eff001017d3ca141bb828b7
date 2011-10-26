@@ -22,9 +22,9 @@ function main() {
 }
 
 function draw(gl, glUtil, userData) {
-	if(!userData.square) {
-		userData.square = {};
-		bindSquareBuffer(gl, userData.square);
+	if(!userData.triangle) {
+		userData.triangle = {};
+		bindTriangleBuffer(userData.triangle);
 	}
 
 	gl.viewport(0, 0, 640, 480);
@@ -34,18 +34,18 @@ function draw(gl, glUtil, userData) {
 	gl.useProgram(userData.program);
 
 	// Bind the vertex data
-	gl.bindBuffer(gl.ARRAY_BUFFER, userData.square.vertexBuffer);
+	gl.bindBuffer(gl.ARRAY_BUFFER, userData.triangle.vertexBuffer);
 	gl.vertexAttribPointer(userData.vertexAttribLoc, 3, gl.FLOAT, false, 0, 0);
 	gl.enableVertexAttribArray(userData.vertexAttribLoc);
 
 	gl.drawArrays(gl.TRIANGLES, 0, 3);
 }
 
-function bindSquareBuffer(gl, triangle) {
+function bindTriangleBuffer(o) {
 	var vVertices = new Float32Array([0.0, 0.5, 0.0, -0.5, -0.5, 0.0, 0.5, -0.5, 0.0]);
 
-	triangle.vertexBuffer = gl.createBuffer();
-	gl.bindBuffer(gl.ARRAY_BUFFER, triangle.vertexBuffer);
+	userData.triangle.vertexBuffer = gl.createBuffer();
+	gl.bindBuffer(gl.ARRAY_BUFFER, userData.triangle.vertexBuffer);
 	gl.bufferData(gl.ARRAY_BUFFER, vVertices, gl.STATIC_DRAW);
 }
 
@@ -79,26 +79,4 @@ function init(gl, glUtil, userData) {
 	window.gl = gl;
 
 	return true;
-}
-
-//////////
-
-function drawBox(size) {
-	vr s = size / 2;
-	var vertices = [
-	[-s,-s, s], 
-	[s,s,s], 
-	[-s,s,s], 
-	[s,-s,s],
-	[-s,-s,-s], 
-	[s,s,-s], 
-	[-s,s,-s], 
-	[s,-s,-s] 
-	]; 
-	
-	var faces = [
-		[0,1,2],
-		[0,3,1],
-		[]
-	]; 
 }

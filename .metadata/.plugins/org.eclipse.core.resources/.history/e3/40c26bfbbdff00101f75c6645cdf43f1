@@ -34,7 +34,7 @@ function syncDir(dir) {
 			})(dir + "/" + file);
 	}
 
-	handler["/"] = createIndexHandler(files); 
+	handler["/"] = handler["/index.html"];
 
 	return handler;
 }
@@ -44,25 +44,6 @@ function createFileHandler(file) {
 		readLocalFile(req, res, file);
 	};
 }
-
-function createIndexHandler(files) {
-	return function(req, res) {
-		res.writeHead(200, {
-			'Content-Type' : 'text/html'
-		});
-		
-		res.write("<html><head><title>Possienka.de</title></head><body>"); 
-		res.write("<ul>"); 
-		
-		for(var i = 0; i != files.length; i++) {
-			res.write("<li><a href='LINK'>LINK</a></li>\n".replace(/LINK/g, files[i])); 
-		}
-		
-		res.write("</ul>");
-		res.write("</body></html>"); 
-		res.end(); 
-	}; 
-} 
 
 function readLocalFile(req, res, file) {
 	console.log(req.url + "-->" + file);
