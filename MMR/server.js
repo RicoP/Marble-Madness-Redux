@@ -59,8 +59,8 @@ function createIndexHandler(files) {
 	s += ("<html><head><title>Possienka.de</title></head><body>");
 	s += ("<ul>");
 
-	for(var i = 0; i != files.length; i++) {
-		s += ("<li><a href='LINK'>LINK</a></li>".replace(/LINK/g, files[i]));
+	for(var i = 0; i != orderedFiles.length; i++) {
+		s += ("<li><a href='LINK'>LINK</a></li>".replace(/LINK/g, orderedFiles[i]));
 	}
 	s += ("</ul>");
 	s += ("</body></html>");
