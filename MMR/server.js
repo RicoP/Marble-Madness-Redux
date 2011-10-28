@@ -1,4 +1,8 @@
-var http = require('http'), fs = require("fs"), path = require("path"), urlParser = require("url").parse, handlerList = syncDir("http");
+var http = require('http'), //
+fs = require("fs"), //
+path = require("path"), //
+urlParser = require("url").parse, //
+handlerList = syncDir("http");
 
 http.createServer(function(req, res) {
 	var parsedUrl = urlParser(req.url, true);
