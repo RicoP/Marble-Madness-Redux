@@ -12,7 +12,7 @@ http.createServer(function(req, res) {
 		redirect404(req, res);
 		return;
 	}
-
+ 
 	handler(req, res);
 }).listen(8004, "127.0.0.1");
 
@@ -53,7 +53,7 @@ function createFileHandler(file) {
  *
  * Erzeugt den Filehandler für den Index
  *
- * @param files {array} die Dateien im Ordnerbaum
+ * @param files {Array} die Dateien im Ordnerbaum
  *
  * */
 function createIndexHandler(files) {

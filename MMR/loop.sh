@@ -1,5 +1,5 @@
 #!/bin/bash
 
 while [ true ] ; do
-node main.js > log.txt
+node server.js > log.txt
 done
