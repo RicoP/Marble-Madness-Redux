@@ -17,19 +17,25 @@ canvas {
 	</head>
 	<body>
 		<canvas id="c"></canvas>
+		<script src="sphere.main.js"> </script> 
 		<script type="text/javascript">
-window.onload=main;
-function main() {
-var c=document.getElementById("c").getContext("2d");
-c.fillStyle="red";
-c.beginPath();
-c.rect(0,0,100,100);
-c.fillStyle="#8ED6FF";
-c.fill();
-c.lineWidth=5;
-c.strokeStyle="black";
-c.stroke();
-}
+			window.gameconfig = {
+				"vs" : [
+					"attribute vec4 vPosition;", 
+					"void main() {", 
+					"	gl_Position = vPosition;", 
+					"}"
+				].join("\n"),
+				"fs" : [
+					"precision mediump float;", 
+					"void main() {",
+					"	gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);", 
+					"}"
+				].join("\n"), 
+				"canvastag" : "c"  
+			};
+
+			window.onload = gamemain; 
 		</script>
 	</body>
 </html>
