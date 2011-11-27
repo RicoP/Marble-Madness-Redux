@@ -1,21 +1,32 @@
 function gamemain() {
-	var config  = window.gameconfig, 
-	    gl = document.getElementById(config.canvastag).getContext("experimental-webgl"); 
+	var config = window.gameconfig, 
+	    gl = document.getElementById(config.canvastag).getContext("experimental-webgl"), 
+	    raf = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {window.setTimeout(callback, 1000 / 60); }; 
 
-	init(gl, config); 
+	var data = init(gl, config); 
 
 	(function animloop() {
-		draw(gl, config);
-		// Chrome only! 
-		window.webkitRequestAnimationFrame(animloop);
-	})();
+		draw(gl, data);
+		raf(animloop);
+	}());
 }
 
-function draw(gl, config) {
+function draw(gl, data) {
+	gl.viewport(0, 0, 640, 480); 
+
+	gl.clear(gl.COLOR_BUFFER_BIT);
+
+	gl.useProgram(data.program); 
+
+	
+	gl.bindBuffer(gl.ARRAY_BUFFER, data.buffer); 
+	gl.vertexAttribPointer(data.vertexAttribute, 3, gl.FLOAT, false, 0, 0); 
+	gl.enableVertexAttribArray(data.vertexAttribute);
+    gl.drawArrays(gl.TRIANGLES, 0, 3); 
 } 
 
 function init(gl, config) {
-	var program, linked, vertexShader, fragmentShader; 
+	var program, vertexAttribute, linked, vertexShader, fragmentShader; 
 
 	program = gl.createProgram(); 
 
@@ -35,11 +46,19 @@ function init(gl, config) {
 	gl.linkProgram(program); 
 	linked = gl.getProgramParameter(program, gl.LINK_STATUS); 
 
+	vertexAttribute = gl.getAttribLocation(program, "vPosition"); 
+
 	gl.clearColor(0.0, 0.0, 0.0, 1.0); 
 
 	// Triangle Buffer binden 
-	var vVertices = new Float32Array([0.0, 0.5, 0.0, -0.5, -0.5, 0.0, 0.5, -0.5, 0.0]);
-	triangle.vertexBuffer = gl.createBuffer();
-	gl.bindBuffer(gl.ARRAY_BUFFER, triangle.vertexBuffer);
-	gl.bufferData(gl.ARRAY_BUFFER, vVertices, gl.STATIC_DRAW);
+	var vertices = new Float32Array([0.0, 0.5, 0.0, -0.5, -0.5, 0.0, 0.5, -0.5, 0.0]);
+	var buffer = gl.createBuffer();
+	gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+	gl.bufferData(gl.ARRAY_BUFFER, vertices, gl.STATIC_DRAW);
+
+	return {
+		"buffer" : buffer, 
+		"program" : program, 
+		"vertexAttribute" : vertexAttribute
+	}; 
 }
